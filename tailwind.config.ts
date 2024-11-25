@@ -19,6 +19,9 @@ export default {
     },
     extend: {
       colors: {
+        'game-sky': '#4AC0FF',
+        'game-pipe': '#74BF2E',
+        'game-bird': '#FFC60B',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -53,24 +56,19 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
       keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+        "bird-flap": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-15px)" },
         },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+        "pipe-move": {
+          "0%": { transform: "translateX(400px)" },
+          "100%": { transform: "translateX(-100px)" },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "bird-flap": "bird-flap 0.6s ease-in-out infinite",
+        "pipe-move": "pipe-move 3s linear infinite",
       },
     },
   },
